@@ -1,0 +1,3 @@
+name: 1p1tCore
+version: '${project.version}'
+main: me.kelsi._1p1tCore
