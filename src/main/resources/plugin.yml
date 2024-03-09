@@ -1,6 +1,7 @@
 name: 1p1tCore
 version: '${project.version}'
 main: me.kelsi._1p1tCore
+softdepend: [ ProtocolLib ]
 permissions:
   1p1t.admin:
     description: "Пермишн для администрации"
@@ -10,6 +11,6 @@ permissions:
     default: op
 commands:
   stats:
-    description: "Использование: /stats world - чтобы узнать информацию о сервере\n/stats player <player> - чтобы узнать информацию о игроке(только для ВИП)"
+    usage: "Использование: /stats world - чтобы узнать информацию о сервере\n/stats player <player> - чтобы узнать информацию о игроке(только для ВИП)"
   kill:
-    description: "Использование: /kill - чтобы убить себя\n/kill <player> - чтобы убить игрока(только для администрации)"
+    usage: "Использование: /kill - чтобы убить себя\n/kill <player> - чтобы убить игрока(только для администрации)"
