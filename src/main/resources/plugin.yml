@@ -1,7 +1,8 @@
 name: 1p1tCore
 version: '${project.version}'
 main: me.kelsi._1p1tCore
-softdepend: [ ProtocolLib ]
+softdepend:
+  - ProtocolLib
 permissions:
   1p1t.admin:
     description: "Пермишн для администрации"
