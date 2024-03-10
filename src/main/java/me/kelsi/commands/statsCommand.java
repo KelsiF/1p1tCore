@@ -36,7 +36,7 @@ public class statsCommand implements CommandExecutor {
                             Date date = new Date(target.getFirstPlayed());
                             SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
                             // 20 тиков = 1 секунда, 1 минута = 60 секунд, 1 час = 60 минут. time * 20 * 60 * 60
-                            double hours = target.getStatistic(Statistic.PLAYER_KILLS)* 20 * 60 * 60;
+                            double hours = target.getStatistic(Statistic.PLAYER_KILLS) / 20 / 60 / 60;
                             player.sendMessage(ChatColor.BOLD + "\nИнформация о игроке: " + ChatColor.RESET + "\nНикнейм: " + target.getName() + "\nвпервые зашел на сервер: " + sdf.format(date) + "\nУбито игроков/мобов: " + hours + "/" + target.getStatistic(Statistic.MOB_KILLS) + "\nСмертей: " + target.getStatistic(Statistic.DEATHS) + "\nНаиграно: " + target.getStatistic(Statistic.PLAY_ONE_TICK) + " ч.");
                             return true;
                         } else {

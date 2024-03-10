@@ -6,7 +6,7 @@
 
     <groupId>me.kelsi</groupId>
     <artifactId>1p1tcore</artifactId>
-    <version>1.2.1</version>
+    <version>1.2.3</version>
     <packaging>jar</packaging>
 
     <name>1p1tCore</name>
