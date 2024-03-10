@@ -8,3 +8,7 @@
 # v. 1.2.1
 ### Added:
 - ProtocolLib depend fixed
+
+# v. 1.2.2
+### Added:
+- tab fix

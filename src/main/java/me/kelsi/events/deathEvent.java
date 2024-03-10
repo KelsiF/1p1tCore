@@ -20,7 +20,6 @@ public class deathEvent implements Listener {
             event.setDeathMessage(ChatColor.RED + player.getName() + " вскрыл вены...");
             plugin.getConfig().set("isSuicided", false);
         } else if (!isSuicided) {
-            event.setDeathMessage(event.getDeathMessage());
             plugin.getConfig().set("isSuicided", false);
         }
     }

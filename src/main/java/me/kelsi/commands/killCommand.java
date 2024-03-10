@@ -18,8 +18,8 @@ public class killCommand implements CommandExecutor {
             player = (Player) sender;
         }
         if (args.length <= 0) {
-            player.setHealth(0);
             plugin.getConfig().set("isSuicided", true);
+            player.setHealth(0);
             plugin.saveConfig();
 
             return true;

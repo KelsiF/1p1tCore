@@ -1,11 +1,11 @@
 package me.kelsi.events;
 
-import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.ProtocolManager;
-import com.comphenix.protocol.events.PacketContainer;
-import com.comphenix.protocol.wrappers.WrappedChatComponent;
+import net.md_5.bungee.api.chat.BaseComponent;
+import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -19,8 +19,6 @@ import java.util.List;
 
 public class tabEvent implements Listener {
 
-    private List<String> headerLines;
-    private List<String> footerLines;
 
     JavaPlugin plugin; public tabEvent(JavaPlugin plugin) {this.plugin = plugin;}
 
@@ -49,11 +47,14 @@ public class tabEvent implements Listener {
         Player player = event.getPlayer();
         String timer_name = plugin.getConfig().getString("player_timer");
         ProtocolManager manager = ProtocolLibrary.getProtocolManager();
+        FileConfiguration config = plugin.getConfig();
 
+        String header_text = color.color(config.getString("tab.header.a") + color.color(config.getString("tab.header.b")));
+        String footer_text = color.color(config.getString("tab.footer.a") + color.color(config.getString("tab.footer.b")));
 
         if (player.getName().equalsIgnoreCase(timer_name)) {
 
-            PacketContainer pc = manager.createPacket((PacketType.Play.Server.PLAYER_LIST_HEADER_FOOTER));
+            /*PacketContainer pc = manager.createPacket((PacketType.Play.Server.PLAYER_LIST_HEADER_FOOTER));
 
             pc.getChatComponents().write(0, WrappedChatComponent.fromText(color.color(plugin.getConfig().getString("tab.header", ""))))
                     .write(1, WrappedChatComponent.fromText(color.color(plugin.getConfig().getString("tab, footer"))));
@@ -63,6 +64,11 @@ public class tabEvent implements Listener {
                 }
             } catch (Exception ex) {
                 ex.printStackTrace();
+            }*/
+            for (Player p : Bukkit.getOnlinePlayers()) {
+                BaseComponent[] header = TextComponent.fromLegacyText(color.color(header_text));
+                BaseComponent[] footer = TextComponent.fromLegacyText(color.color(footer_text));
+                p.setPlayerListHeaderFooter(header, footer);
             }
         }
     }

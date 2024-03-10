@@ -2,10 +2,10 @@ isSuicided: false
 admin_prefix: "*"
 tab:
   header:
-    - "&a1p1t"
-    - "&c1Player1Tnt"
+    a: "&a1p1t"
+    b: "&c1Player1Tnt"
   footer:
-    - "&7Онлайн: &avalue"
-    - "&7Тпс: &avalue"
+    a: "&7Онлайн: &avalue"
+    b: "&7Тпс: &avalue"
 player_timer: "KelsiDev"
 change_pt: false

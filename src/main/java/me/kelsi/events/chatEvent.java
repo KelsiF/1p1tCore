@@ -20,7 +20,7 @@ public class chatEvent implements Listener {
 
         for (Player p : plugin.getServer().getOnlinePlayers()) {
             if (sender.hasPermission("1p1t.admin")) {
-                p.sendMessage(ChatColor.GOLD + prefix + ChatColor.RESET + "<" + sender.getName() + ">" + " " + message);
+                p.sendMessage(ChatColor.GOLD + "" + ChatColor.BOLD + prefix + ChatColor.RESET + " <" + sender.getName() + ">" + " " + message);
             } else {
                 p.sendMessage("<" + sender.getName() + ">" + " " + message);
             }
